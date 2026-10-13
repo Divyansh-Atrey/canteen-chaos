@@ -10,61 +10,54 @@ Delete the example before you submit.
 
 
 
-## Example — delete this
-
-### CC-99 — "The cart total is wrong"
-
-**Reproduced:** Added 2 dosas at Rs. 60 each. The cart showed
-Rs. 119.99999 instead of Rs. 130. Happened every time, on any dish with
-a price ending in .50.
-
-**Cause:** The total was being added up with plain floating point and
-never rounded, so 0.1 + 0.2 style errors showed up on screen. The
-rounding helper existed but this one place was not using it.
-
-**Fix:** Ran the total through the existing rounding helper instead of
-adding a new one, so every price on screen goes through the same path.
-
-**Checked:** Cart, checkout and the order screen all show Rs. 130 now.
-Prices without decimals still show without a trailing .00.
-
-**Time:** about 40 minutes, most of it working out that the cart and the
-order screen round in different places.
 
 
 
-## CC-0X — "<the complaint, in short>"
+### CC-01 : "The search suggestions are behind everything"
 
-**Reproduced:**
+**Reproduced:** I typed the dish in search bar ,but the above search 
+contents were hidden behind the main page contents. I can't click the topmost element.
 
-**Cause:**
+**Cause:** The search container `.search-wrap` had  `z-index: 1`, which 
+resulted in showing whole list of suggestion box .
 
-**Fix:**
+**Fix:** Changed the `z-index` of `.search-wrap` from `1` to `100`.
 
-**Checked:**
+**Checked:** Now the whole search suggestions are showing and i am able
+to click them.
 
-**Time:**
-
-
-
-## Could not fix
-
-For anything you investigated but did not solve. Say what you tried and
-where you got to. This is worth marks — leaving it blank when you got
-stuck is not.
-
-### CC-0X — "<the complaint>"
-
-**What I tried:**
-
-**Where I got to:**
-
-**What I would try next:**
+**Time:** took 25 minutes, mainly understanding the code of the search box 
+and changing the search wrap code.
 
 
 
-## Extra credit
 
-Anything not on the bug log: a problem you found yourself, a test you
-wrote, or a fix you are unsure about. Same format, plus one line on how
-you noticed it.
+### CC-02: "Can't read anything in dark mode"
+
+**Reproduced:** I switched the site to dark mode but the dish names and it's prices
+are almost invisible.
+
+**Cause:** The `.dish-body` has a dark color due to which we were not able to see them 
+properly when the theme switched to dark mode (dark text blended in dark background).
+
+**Fix:** Changed the color from `#2b2118` to `var(--ink)` to provide better visibility in dark mode.
+
+**Checked:** Turned on and off dark mode ,now the dish names ad prices are visible
+
+**Time:** took 15 minutes, mainly understanding the code of light and dark themes
+and changing the code for the dish body.
+
+
+### CC-05: "The category bar scrolls away on my phone"
+
+**What I tried:** I changed the position of cat-tabs to sticky and top:62px so that it
+ stops scrolling under the header as it is 62px.
+
+**Where I got to:** I don't see any change in website for the phone after making
+ the position of cat-tabs sticky.
+
+**What I would try next:** I would check the other child blocks to check the problem.
+
+
+
+
