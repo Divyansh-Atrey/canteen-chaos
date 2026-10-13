@@ -47,6 +47,20 @@ properly when the theme switched to dark mode (dark text blended in dark backgro
 **Time:** took 15 minutes, mainly understanding the code of light and dark themes
 and changing the code for the dish body.
 
+### CC-03: "The menu is wider than my phone"
+
+**Reproduced:** I opened the Canteen Menu on a mobile screen having width below 360px and that's why the menu is not fully visible and the add to cart option.
+
+**Cause:** The dish name buttons were set to width: max-content and the menu-card images were set to min-width:100% which let 
+to less visibility of menu cards.
+
+**Fix:** Changed the width:100% and object-fit : cover to make the img fit in dish-card img and menu-grid width:100% in the max-width : 760px and 480px.
+
+**Checked:** Checked the Website after changing the code of dish card and menu.
+
+**Time:** took 15 minutes, mainly understanding the code of max-width : 760px and max-width : 480px.
+
+
 
 ### CC-05: "The category bar scrolls away on my phone"
 
