@@ -1,18 +1,5 @@
 # Debug log
 
-Your notes. One entry per bug you fixed, using the template below.
-
-This file is read as carefully as your code. A correct fix you cannot
-explain counts for little; a bug you could not fix but investigated
-honestly still counts for something.
-
-Delete the example before you submit.
-
-
-
-
-
-
 ### CC-01 : "The search suggestions are behind everything"
 
 **Reproduced:** I typed the dish in search bar ,but the above search 
@@ -28,7 +15,6 @@ to click them.
 
 **Time:** took 25 minutes, mainly understanding the code of the search box 
 and changing the search wrap code.
-
 
 
 
@@ -48,6 +34,7 @@ properly when the theme switched to dark mode (dark text blended in dark backgro
 and changing the code for the dish body.
 
 
+
 ### CC-03: "The menu is wider than my phone"
 
 **Reproduced:** I opened the Canteen Menu on a mobile screen having width below 360px and that's why the menu is not fully visible and the add to cart option.
@@ -60,6 +47,7 @@ to less visibility of menu cards.
 **Checked:** Checked the Website after changing the code of dish card and menu.
 
 **Time:** took 15 minutes, mainly understanding the code of max-width : 760px and max-width : 480px.
+
 
 
 ### CC-05: "The category bar scrolls away on my phone"
@@ -89,3 +77,21 @@ error: Invalid order and at the end shows Invalid Order: Only (quantity) left of
 and we can't order now more than they had.
 
 **Time:** took 20 minutes, mainly understanding the code of validation.js and changing the code.
+
+
+
+### CC-08: "An old coupon still works"
+
+**Reproduced:** When i ordered something with the coupon `FRESHERS24` , it worked and i got a discount
+from a coupon which expired years ago.
+
+**Cause:** The pricing.js didn't have the logic for the coupon expiry date exists and
+it is less than current Date and time, which would show coupon expired.
+
+**Fix:** added a logic for the coupon if Coupon.expiresAt and expiry-date < current date ,
+then it should show `Coupon Expired`.
+
+**Checked:** Checked the Website after changing the code of pricing.js and it now shows the error Coupon Expired.
+
+**Time:** took 25 minutes, mainly understanding the code of pricing.js , coupons.routes.js and coupons.json
+and changing the code.
