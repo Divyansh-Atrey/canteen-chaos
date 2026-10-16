@@ -95,3 +95,33 @@ then it should show `Coupon Expired`.
 
 **Time:** took 25 minutes, mainly understanding the code of pricing.js , coupons.routes.js and coupons.json
 and changing the code.
+
+
+
+### CC-10: "Sorting by price is backwards"
+
+**What I tried:** I interchanged the price-asc and price-desc values in search.js 
+so that the sort reverses and it should be correctly sorted then. 
+
+**Where I got to:** I saw a change in between some of the items but not fully sorted ,
+and somewhere the mid price item was coming at the first in case of high to low sort.
+
+**What I would try next:** I would check the other backend files too.
+
+
+
+
+## Brownie task
+
+### CC-11: "The Cat Tabs Bar move with the Scroll"
+
+**Reproduced:** When i scrolled down the menu , the Cat-tabs bar (including All, Breakfast, Lunch, Chinese, etc) 
+was also going with the screen and at the time of search also it appears in middle blocking the view.
+
+**Cause:** In Style.css it had position : relative and top : 62px which led to fix on screen 62px below filters-inner.
+
+**Fix:** changed the code of position of cat-tabs from relative to static.
+
+**Checked:** Checked the Website after changing the code of cat-tabs in style.css and it now shows it with the filters-inner.
+
+**Time:** took 10 minutes, mainly observing the menu page and changing the code of style.css .
