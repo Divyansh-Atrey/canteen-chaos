@@ -118,10 +118,12 @@ and somewhere the mid price item was coming at the first in case of high to low 
 **Reproduced:** When i scrolled down the menu , the Cat-tabs bar (including All, Breakfast, Lunch, Chinese, etc) 
 was also going with the screen and at the time of search also it appears in middle blocking the view.
 
-**Cause:** In Style.css it had position : relative and top : 62px which led to fix on screen 62px below filters-inner.
+**Cause:** In Style.css it had position : relative and top : 62px which led to fix on 
+screen 62px below filters-inner.
 
 **Fix:** changed the code of position of cat-tabs from relative to static.
 
-**Checked:** Checked the Website after changing the code of cat-tabs in style.css and it now shows it with the filters-inner.
+**Checked:** Checked the Website after changing the code of cat-tabs in style.css 
+and it now shows it with the filters-inner.
 
 **Time:** took 10 minutes, mainly observing the menu page and changing the code of style.css .
