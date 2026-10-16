@@ -209,7 +209,7 @@ h1, h2, h3 { margin: 0; }
   overflow-x: auto;
   padding: 12px 16px 12px;
   scrollbar-width: thin;
-  position: sticky;
+  position: relative;
   top: 62px; 
   z-index: 40;
   background: var(--orange-soft);

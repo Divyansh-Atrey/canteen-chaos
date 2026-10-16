@@ -47,6 +47,7 @@ properly when the theme switched to dark mode (dark text blended in dark backgro
 **Time:** took 15 minutes, mainly understanding the code of light and dark themes
 and changing the code for the dish body.
 
+
 ### CC-03: "The menu is wider than my phone"
 
 **Reproduced:** I opened the Canteen Menu on a mobile screen having width below 360px and that's why the menu is not fully visible and the add to cart option.
@@ -61,17 +62,30 @@ to less visibility of menu cards.
 **Time:** took 15 minutes, mainly understanding the code of max-width : 760px and max-width : 480px.
 
 
-
 ### CC-05: "The category bar scrolls away on my phone"
 
 **What I tried:** I changed the position of cat-tabs to sticky and top:62px so that it
- stops scrolling under the header as it is 62px.
+stops scrolling under the header as it is 62px.
 
 **Where I got to:** I don't see any change in website for the phone after making
- the position of cat-tabs sticky.
+the position of cat-tabs sticky(but it makes the search suggestion hide so i am reverting it).
 
 **What I would try next:** I would check the other child blocks to check the problem.
 
 
 
+### CC-06: "I ordered more than they had"
 
+**Reproduced:** When i ordered something i can order more than the stock they had.
+ Product can be ordered more than the they can serve.
+
+**Cause:** The Validation.js file didn't have the logic for the items ordered > the item left ,
+due to which we were able to order more than the items available.
+
+**Fix:** added a logic for the order if quantity > Number of dish in stock then it shows a 
+error: Invalid order and at the end shows Invalid Order: Only (quantity) left of (Dish name).
+
+**Checked:** Checked the Website after changing the code of validation.js and it now shows the error 
+and we can't order now more than they had.
+
+**Time:** took 20 minutes, mainly understanding the code of validation.js and changing the code.
